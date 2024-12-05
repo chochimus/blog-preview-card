@@ -1,0 +1,145 @@
+@font-face {
+  font-family: "Figtree";
+  src: url(./assets/fonts/Figtree-VariableFont_wght.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Figtree";
+  min-height: 100%;
+  background-color: hsl(47, 88%, 63%);
+}
+
+body,
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.card-image {
+  display: block;
+  width: 300px;
+  height: 180px;
+  background-image: url("./assets/images/illustration-article.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  max-width: 310px;
+  padding: 1rem;
+  border-radius: 1rem;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 16px;
+  box-shadow: 0px 0px 0px 1px black, 8px 8px 0px 2px black;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translate(2px, 2px);
+}
+.card:hover .card-title {
+  color: hsl(47, 88%, 63%);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.card-subject {
+  background-color: hsl(47, 88%, 63%);
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.65rem;
+  font-weight: 800;
+}
+
+.card-date {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+}
+
+.card-title {
+  font-size: 1.3rem;
+}
+
+.card-description {
+  color: hsl(0, 0%, 42%);
+  margin-bottom: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.card-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: bold;
+}
+
+footer {
+  padding: 16px;
+}
+
+@media screen and (max-width: 375px) {
+  .card-image {
+    width: 270px;
+    height: 190px;
+    align-self: flex-start;
+  }
+  .card {
+    max-width: 275px;
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.card {
+  animation: slideInFromTop 1s ease-out;
+}
+
+.card-link:focus-visible {
+  outline: 2px solid red; /* Custom focus outline for cards */
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.card-link:active {
+  color: inherit;
+}
+
+.card-link:visited {
+  color: inherit;
+}
