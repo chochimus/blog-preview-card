@@ -134,6 +134,7 @@ footer {
 
 .card-link {
   text-decoration: none;
+  color: inherit;
 }
 
 .card-link:active {
